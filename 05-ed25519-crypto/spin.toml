@@ -1,0 +1,16 @@
+spin_manifest_version = 2
+
+[application]
+name = "ed25519-crypto"
+version = "0.1.0"
+
+[[trigger.http]]
+route = "/..."
+component = "ed25519-crypto"
+
+[component.ed25519-crypto]
+source = "dist/ed25519-crypto.wasm"
+exclude_files = ["**/node_modules"]
+[component.ed25519-crypto.build]
+command = ["npm install", "npm run build"]
+watch = ["src/**/*.js"]

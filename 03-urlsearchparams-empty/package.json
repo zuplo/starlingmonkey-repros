@@ -1,0 +1,15 @@
+{
+  "name": "urlsearchparams-empty",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node build.mjs && mkdirp dist && j2w -i build/bundle.js --initLocation http://urlsearchparams-empty.localhost -o dist/urlsearchparams-empty.wasm"
+  },
+  "devDependencies": {
+    "mkdirp": "^3.0.1",
+    "esbuild": "^0.25.8"
+  },
+  "dependencies": {
+    "@spinframework/build-tools": "^1.0.4",
+    "@spinframework/wasi-http-proxy": "^1.0.0"
+  }
+}

@@ -1,0 +1,16 @@
+spin_manifest_version = 2
+
+[application]
+name = "async-local-storage"
+version = "0.1.0"
+
+[[trigger.http]]
+route = "/..."
+component = "async-local-storage"
+
+[component.async-local-storage]
+source = "dist/async-local-storage.wasm"
+exclude_files = ["**/node_modules"]
+[component.async-local-storage.build]
+command = ["npm install", "npm run build"]
+watch = ["src/**/*.js"]

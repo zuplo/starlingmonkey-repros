@@ -1,0 +1,18 @@
+spin_manifest_version = 2
+
+[application]
+authors = []
+description = "Repro: URLSearchParams returns null for empty value"
+name = "urlsearchparams-empty"
+version = "0.1.0"
+
+[[trigger.http]]
+route = "/..."
+component = "urlsearchparams-empty"
+
+[component.urlsearchparams-empty]
+source = "dist/urlsearchparams-empty.wasm"
+exclude_files = ["**/node_modules"]
+[component.urlsearchparams-empty.build]
+command = ["npm install", "npm run build"]
+watch = ["src/**/*.js"]

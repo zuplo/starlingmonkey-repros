@@ -1,0 +1,19 @@
+spin_manifest_version = 2
+
+[application]
+authors = []
+description = "Repro: Response.clone() missing or broken"
+name = "response-clone"
+version = "0.1.0"
+
+[[trigger.http]]
+route = "/..."
+component = "response-clone"
+
+[component.response-clone]
+source = "dist/response-clone.wasm"
+exclude_files = ["**/node_modules"]
+allowed_outbound_hosts = ["https://*:*", "http://*:*"]
+[component.response-clone.build]
+command = ["npm install", "npm run build"]
+watch = ["src/**/*.js"]

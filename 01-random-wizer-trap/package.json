@@ -1,0 +1,15 @@
+{
+  "name": "random-wizer-trap",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node build.mjs && mkdirp dist && j2w -i build/bundle.js --initLocation http://random-wizer-trap.localhost -o dist/random-wizer-trap.wasm"
+  },
+  "devDependencies": {
+    "mkdirp": "^3.0.1",
+    "esbuild": "^0.25.8"
+  },
+  "dependencies": {
+    "@spinframework/build-tools": "^1.0.4",
+    "@spinframework/wasi-http-proxy": "^1.0.0"
+  }
+}

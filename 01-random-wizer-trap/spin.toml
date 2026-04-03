@@ -1,0 +1,18 @@
+spin_manifest_version = 2
+
+[application]
+authors = []
+description = "Repro: crypto.randomUUID traps during Wizer pre-init"
+name = "random-wizer-trap"
+version = "0.1.0"
+
+[[trigger.http]]
+route = "/..."
+component = "random-wizer-trap"
+
+[component.random-wizer-trap]
+source = "dist/random-wizer-trap.wasm"
+exclude_files = ["**/node_modules"]
+[component.random-wizer-trap.build]
+command = ["npm install", "npm run build"]
+watch = ["src/**/*.js"]

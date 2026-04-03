@@ -1,0 +1,16 @@
+spin_manifest_version = 2
+
+[application]
+name = "string-normalize"
+version = "0.1.0"
+
+[[trigger.http]]
+route = "/..."
+component = "string-normalize"
+
+[component.string-normalize]
+source = "dist/string-normalize.wasm"
+exclude_files = ["**/node_modules"]
+[component.string-normalize.build]
+command = ["npm install", "npm run build"]
+watch = ["src/**/*.js"]
